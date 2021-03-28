@@ -101,8 +101,7 @@ public class MenuManager {
 			}	 
 		    System.out.println("삭제 되었습니다."); 	
 		}
-	 } 
-	 
+	 } 	 
 	 public static void EditNotice(ArrayList<String> Notice) {
 		Scanner input = new Scanner(System.in);
 		Scanner input1 = new Scanner(System.in);
@@ -138,8 +137,7 @@ public class MenuManager {
 			}
 			System.out.println("편집 되었습니다.");
 		}
-	 }
-	 
+	 }	 
 	 public static void ViewNotice(ArrayList<String> Notice){
 		Scanner input = new Scanner(System.in);
 		ArrayList<String> viewNotice = new ArrayList<String>();
@@ -158,8 +156,7 @@ public class MenuManager {
 				else i++;
 			}
 		}
-  }
-	 
+  }	 
 	 public static void NOnotice(ArrayList<String> Notice, String Num) { // 찾는 공고 넘버가 없을 때 또는 작성한 공고가 아무 것도 없을 때 사용
 		if(Notice.size()==0) { // 작성한 공고가 아무것도 없을 때 출력
 				System.out.println("공고가 없습니다!");
