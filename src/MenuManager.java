@@ -140,7 +140,6 @@ public class MenuManager {
 	 }	 
 	 public static void ViewNotice(ArrayList<String> Notice){
 		Scanner input = new Scanner(System.in);
-		ArrayList<String> viewNotice = new ArrayList<String>();
 		System.out.println("보길 원하는 공고 넘버를 입력하세요: ");
 		String Num = input.nextLine();
 		int i = 0;
