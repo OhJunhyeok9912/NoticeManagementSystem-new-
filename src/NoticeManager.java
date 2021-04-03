@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NoticeManager {
-	Scanner input, input1;
+	Scanner input;
 	
 	NoticeManager(Scanner input){
 		this.input = input;
