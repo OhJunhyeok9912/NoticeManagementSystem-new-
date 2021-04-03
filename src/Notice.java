@@ -1,3 +1,4 @@
+
 public class Notice {
 	String NoticeNumber; String NoticeTitle; String CompanyName;
 	String location;String period;String career;
@@ -7,13 +8,13 @@ public class Notice {
 	String type2;String condition1;String condition2;
 	String way;String submission;String comment;
 	
-	public Notice(String noticeNumber, String noticeTitle, String companyName, String location, String period,
+	public Notice(String NoticeNumber, String NoticeTitle, String CompanyName, String location, String period,
 			String career, String gender, String age, String academic, String salary, String period2, String day,
 			String time, String type1, String personnel, String type2, String condition1, String condition2, String way,
 			String submission, String comment) {
-		this.NoticeNumber = noticeNumber;
-		this.NoticeTitle = noticeTitle;
-		this.CompanyName = companyName;
+		this.NoticeNumber = NoticeNumber;
+		this.NoticeTitle = NoticeTitle;
+		this.CompanyName = CompanyName;
 		this.location = location;
 		this.period = period;
 		this.career = career;
@@ -55,13 +56,13 @@ public class Notice {
 	}
      
 	
-	public void setnotice(String noticeNumber, String noticeTitle, String companyName, String location, String period,
+	public void setnotice(String NoticeNumber, String NoticeTitle, String CompanyName, String location, String period,
 			String career, String gender, String age, String academic, String salary, String period2, String day,
 			String time, String type1, String personnel, String type2, String condition1, String condition2, String way,
 			String submission, String comment) {
-		this.NoticeNumber = noticeNumber;
-		this.NoticeTitle = noticeTitle;
-		this.CompanyName = companyName;
+		this.NoticeNumber = NoticeNumber;
+		this.NoticeTitle = NoticeTitle;
+		this.CompanyName = CompanyName;
 		this.location = location;
 		this.period = period;
 		this.career = career;
@@ -80,6 +81,5 @@ public class Notice {
 		this.way = way;
 		this.submission = submission;
 		this.comment = comment;
-		
 	}
 }
