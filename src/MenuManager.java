@@ -6,7 +6,7 @@ public class MenuManager {
 	 public static void main(String[] args) {
 		 String num = "0";
 		 Scanner input = new Scanner(System.in);
-		 ArrayList<Notice> Notice = new ArrayList<>();
+		 ArrayList<Notice> Notice = new ArrayList<Notice>();
 		 NoticeManager noticemanager = new NoticeManager(input);
 		 while(!num.equals("5")) {
 			 System.out.println("*** Notice Management System Menu ***");
