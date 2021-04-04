@@ -11,7 +11,7 @@ public class NoticeManager {
 	Notice notice;
 	public ArrayList<Notice> AddNotice() {
 		 notice = new Notice();
-		 ArrayList<Notice> addNotice = new ArrayList<>(); // Notice타입의 arrayList에 새로 추가한 공고를 넣는다. 
+		 ArrayList<Notice> addNotice = new ArrayList<Notice>(); // Notice타입의 arrayList에 새로 추가한 공고를 넣는다. 
 	     System.out.println("공고 넘버: (순서대로 입력하세요.)"); notice.NoticeNumber = input.nextLine(); 
 	     System.out.println("공고제목: "); notice.NoticeTitle = input.nextLine();
 	   	 System.out.println("근무지 정보");   
@@ -118,4 +118,3 @@ public class NoticeManager {
 			
 	  }	 	
 }
-
