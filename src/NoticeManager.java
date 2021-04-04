@@ -75,25 +75,30 @@ public class NoticeManager {
 			for(int i=0; i<Notice.size();i++) {
 				editNotice = Notice.get(i);
 				if(Num.equals(editNotice.NoticeNumber)) {
+					   System.out.println("편집을 위해 y를 눌러주세요."); 
+					    String YesorNo = input.nextLine();
 						System.out.println("편집할 항목의 번호를 입력하세요. 번호를 잘 확인하세요"); 
-						System.out.println("1: 공고제목 2: 회사명, 3: 근무지 위치, 4: 모집기간, 5: 경력, 6: 성별, 7: 나이 , 8: 학력, 9: 급여, 10: 근무기간" );
-						System.out.println("11: 근무요일, 12: 근무시간 13: 모집직종, 14: 모집인원, 15: 고용형태, 16: 우대조건, 17: 기타조건, 18: 지원방법 , 19: 제출서류, 20: 코멘트" );
-						String Editnumber = input.nextLine();
-						System.out.println("편집할 내용을 입력하세요."); 
-						String Edit = input.nextLine();
-						switch(Editnumber){   
-						     case "1": editNotice.NoticeTitle = Edit; break; case "2": editNotice.CompanyName = Edit; break;
-						     case "3": editNotice.location = Edit; break; case "4": editNotice.period = Edit; break;
-						     case "5": editNotice.career = Edit; break; case "6": editNotice.gender = Edit; break;
-						     case "7": editNotice.age = Edit; break; case "8": editNotice.academic = Edit; break;
-						     case "9": editNotice.salary = Edit; break; case "10": editNotice.period2 = Edit; break;
-						     case "11": editNotice.day = Edit; break; case "12": editNotice.time = Edit; break;
-						     case "13": editNotice.type1 = Edit; break; case "14": editNotice.personnel = Edit; break;
-						     case "15": editNotice.type2 = Edit; break; case "16": editNotice.condition1 = Edit; break;
-						     case "17": editNotice.condition2 = Edit; break; case "18": editNotice.way = Edit; break;
-						     case "19": editNotice.submission = Edit; break; case "20": editNotice.comment = Edit; break;
-							
-						}	
+				    do {
+				    	System.out.println("1: 공고제목 2: 회사명, 3: 근무지 위치, 4: 모집기간, 5: 경력, 6: 성별, 7: 나이 , 8: 학력, 9: 급여, 10: 근무기간" );
+					    System.out.println("11: 근무요일, 12: 근무시간 13: 모집직종, 14: 모집인원, 15: 고용형태, 16: 우대조건, 17: 기타조건, 18: 지원방법 , 19: 제출서류, 20: 코멘트" );
+					    String Editnumber = input.nextLine();
+					    System.out.println("편집할 내용을 입력하세요."); 
+					    String Edit = input.nextLine();
+					     switch(Editnumber){   
+					     case "1": editNotice.NoticeTitle = Edit; break; case "2": editNotice.CompanyName = Edit; break;
+					     case "3": editNotice.location = Edit; break; case "4": editNotice.period = Edit; break;
+					     case "5": editNotice.career = Edit; break; case "6": editNotice.gender = Edit; break;
+					     case "7": editNotice.age = Edit; break; case "8": editNotice.academic = Edit; break;
+					     case "9": editNotice.salary = Edit; break; case "10": editNotice.period2 = Edit; break;
+					     case "11": editNotice.day = Edit; break; case "12": editNotice.time = Edit; break;
+					     case "13": editNotice.type1 = Edit; break; case "14": editNotice.personnel = Edit; break;
+					     case "15": editNotice.type2 = Edit; break; case "16": editNotice.condition1 = Edit; break;
+					     case "17": editNotice.condition2 = Edit; break; case "18": editNotice.way = Edit; break;
+					     case "19": editNotice.submission = Edit; break; case "20": editNotice.comment = Edit; break;	
+					     }
+					     System.out.println("편집을 계속하시겠습니까?(y/n)"); 
+					     YesorNo = input.nextLine();
+					    }  while (!(YesorNo.equals("n")));
 						System.out.println("편집 되었습니다.");
 					}
 
