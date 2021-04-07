@@ -6,7 +6,8 @@ public class VoluntaryNotice extends Notice {
 	public void getUserInput(Scanner input) {
 		System.out.println("공고 넘버: (순서대로 입력하세요.)"); String NoticeNumber = input.nextLine(); 
 	     System.out.println("공고제목: "); String NoticeTitle = input.nextLine();
-	   	 System.out.println("활동지 정보");   
+	   	 System.out.println("활동지 정보");  
+	   	System.out.println("활동지 정보");
 	   	 System.out.println("봉사활동처: "); String CompanyName = input.nextLine(); 
 	   	 System.out.println("활동처 위치: "); String location = input.nextLine(); 
 	   	 System.out.println("모집조건");
