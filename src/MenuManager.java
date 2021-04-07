@@ -1,12 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Notice.Notice;
+
 public class MenuManager {
  
 	 public static void main(String[] args) {
 		 String num = "0";
 		 Scanner input = new Scanner(System.in);
-		 ArrayList<Notice> Notice = new ArrayList<>();
+		 ArrayList<Notice> Notices = new ArrayList<Notice>();
 		 NoticeManager noticemanager = new NoticeManager(input);
 		 while(!num.equals("5")) {
 			 System.out.println("*** Notice Management System Menu ***");
@@ -19,16 +21,16 @@ public class MenuManager {
 		     num = input.nextLine();  
 		     switch(num) {
 		         case "1":
-		        	    Notice.addAll(noticemanager.AddNotice());
+		        	    Notices.addAll(noticemanager.AddNotice());
 		        	    break;
 		         case "2":
-		        	    noticemanager.DeleteNotice(Notice);
+		        	    noticemanager.DeleteNotice(Notices);
 	        	        break;
 		         case "3":
-		        	    noticemanager.EditNotice(Notice);
+		        	    noticemanager.EditNotice(Notices);
 	        	        break;
 		         case "4":
-		        	    noticemanager.ViewNotice(Notice);
+		        	    noticemanager.ViewNotice(Notices);
 	        	        break;
 		         case "5":
 	        	        break;
