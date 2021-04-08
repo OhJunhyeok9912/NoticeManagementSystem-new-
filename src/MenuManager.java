@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Notice.Notice;
+import Notice.Notice; //
 
 public class MenuManager {
  
