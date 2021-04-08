@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 import Notice.Notice;
 
 public class NoticeManager {
@@ -125,6 +126,7 @@ public class NoticeManager {
 				
 			}
 			if(Notice.size() - s == Notice.size()) {System.out.println("공고가 없습니다.");}
+
 			}
 			
 	  }	 	

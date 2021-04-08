@@ -8,7 +8,9 @@ public class MenuManager {
 	 public static void main(String[] args) {
 		 String num = "0";
 		 Scanner input = new Scanner(System.in);
+
 		 ArrayList<Notice> Notices = new ArrayList<Notice>();
+
 		 NoticeManager noticemanager = new NoticeManager(input);
 		 while(!num.equals("5")) {
 			 System.out.println("*** Notice Management System Menu ***");
@@ -21,15 +23,19 @@ public class MenuManager {
 		     num = input.nextLine();  
 		     switch(num) {
 		         case "1":
+
 		        	    Notices.addAll(noticemanager.AddNotice());
 		        	    break;
 		         case "2":
 		        	    noticemanager.DeleteNotice(Notices);
 	        	        break;
 		         case "3":
+
 		        	    noticemanager.EditNotice(Notices);
+
 	        	        break;
 		         case "4":
+
 		        	    noticemanager.ViewNotice(Notices);
 	        	        break;
 		         case "5":
