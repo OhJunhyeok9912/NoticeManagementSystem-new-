@@ -19,7 +19,7 @@ public class NoticeManager {
 		 String Kind = "0";
 		 Notice notice;
 		 while (!Kind.equals("1") && !Kind.equals("2")) {
-		 System.out.println("구인 공고의 목적을 선택하세요  1: 봉사자 모집, 2: 기업, 가계의 구인 ");
+		 System.out.println("구인 공고의 목적을 선택하세요  1: 봉사자 모집, 2: 기업, 가게의 구인 ");
 		 Kind = input.nextLine();
 		 if(Kind.equals("1")) {
 			 notice = new VoluntaryNotice();
