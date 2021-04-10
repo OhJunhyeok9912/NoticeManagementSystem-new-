@@ -23,19 +23,15 @@ public class MenuManager {
 		     num = input.nextLine();  
 		     switch(num) {
 		         case "1":
-
 		        	    Notices.addAll(noticemanager.AddNotice());
 		        	    break;
 		         case "2":
 		        	    noticemanager.DeleteNotice(Notices);
 	        	        break;
 		         case "3":
-
 		        	    noticemanager.EditNotice(Notices);
-
 	        	        break;
 		         case "4":
-
 		        	    noticemanager.ViewNotice(Notices);
 	        	        break;
 		         case "5":
