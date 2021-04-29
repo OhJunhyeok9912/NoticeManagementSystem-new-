@@ -3,6 +3,8 @@ package Notice;
 import java.util.Scanner;
 
 public class VoluntaryNotice extends Notice {
+	protected Noticekind kind = Noticekind.voluntary;
+	
 	public void getUserInput(Scanner input) {
 		System.out.println("공고 넘버: (순서대로 입력하세요.)"); String NoticeNumber = input.nextLine(); this.setNoticeNumber(NoticeNumber); 
 	     System.out.println("공고제목: "); String NoticeTitle = input.nextLine(); this.setNoticeTitle(NoticeTitle);
@@ -30,6 +32,17 @@ public class VoluntaryNotice extends Notice {
 	   	 String salary = "봉사활동"; this.setSalary(salary);
 	}
 	public void printNotice(){
+		String nkind = null;
+		switch(this.kind) {
+		case commercial:
+			nkind = "구인 공고";
+			break;
+		case voluntary:
+			nkind = "봉사 활동";
+			break;	
+		default : break;	
+		}
+		System.out.println("목적: "+ nkind);
 		System.out.println("공고 넘버: "+NoticeNumber); System.out.println("공고제목: "+NoticeTitle); 
 	   	 System.out.println("활동지 정보");System.out.println("봉사활동처: "+CompanyName);System.out.println("활동처 위치:" +location); 
 	   	 System.out.println("모집조건");

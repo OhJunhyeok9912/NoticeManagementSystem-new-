@@ -3,22 +3,14 @@ package Notice;
 import java.util.Scanner;
 
 public class Notice {
-	protected Noticekind kind2 = Noticekind.commercial;
-	public Noticekind getKind2() {
-		return kind2;
-	}
-
-	public void setKind2(Noticekind kind) {
-		this.kind2 = kind;
-	}
 	
-	protected Noticekind kind1 = Noticekind.voluntary;
+
 	public Noticekind getKind() {
-		return kind1;
+		return kind;
 	}
 
 	public void setKind(Noticekind kind) {
-		this.kind1 = kind;
+		this.kind = kind;
 	}
 
 	public String getNoticeNumber() {
@@ -189,7 +181,7 @@ public class Notice {
 		this.comment = comment;
 	}
 
-
+	protected Noticekind kind = Noticekind.commercial;
 	protected String NoticeNumber; protected String NoticeTitle; protected String CompanyName;
 	protected String location;protected String period;protected String career;
 	protected String gender;protected String age;protected String academic;
@@ -198,11 +190,11 @@ public class Notice {
 	protected String type2;protected String condition1;protected String condition2;
 	protected String way;protected String submission;protected String comment;
 	
-	public Notice(String NoticeNumber, String NoticeTitle, String CompanyName, String location, String period,
+	public Notice(Noticekind kind, String NoticeNumber, String NoticeTitle, String CompanyName, String location, String period,
 			String career, String gender, String age, String academic, String salary, String period2, String day,
 			String time, String type1, String personnel, String type2, String condition1, String condition2, String way,
 			String submission, String comment) {
-		this.NoticeNumber = NoticeNumber; this.NoticeTitle = NoticeTitle; this.CompanyName = CompanyName;this.location = location; this.period = period;
+		this.kind = kind; this.NoticeNumber = NoticeNumber; this.NoticeTitle = NoticeTitle; this.CompanyName = CompanyName;this.location = location; this.period = period;
 		this.career = career;this.gender = gender;this.age = age;this.academic = academic;this.salary = salary;this.period2 = period2;this.day = day;
 		this.time = time;this.type1 = type1;this.personnel = personnel;this.type2 = type2;this.condition1 = condition1;this.condition2 = condition2;
 		this.way = way;this.submission = submission;this.comment = comment;
@@ -212,8 +204,23 @@ public class Notice {
 		
 	}
 	
+	Notice(Noticekind kind){
+		this.kind = kind;
+	}
+	
 	public void printNotice(){
-		System.out.println("공고 넘버: "+NoticeNumber); System.out.println("공고제목: "+NoticeTitle); 
+		String nkind = null;
+		switch(this.kind) {
+		case commercial:
+			nkind = "구인 공고";
+			break;
+		case voluntary:
+			nkind = "봉사 활동";
+			break;	
+		default : break;	
+		}
+		 System.out.println("목적: "+ nkind);
+		 System.out.println("공고 넘버: "+NoticeNumber); System.out.println("공고제목: "+NoticeTitle); 
 	   	 System.out.println("근무지 정보");System.out.println("회사명: "+CompanyName);System.out.println("근무지 위치:" +location); 
 	   	 System.out.println("모집조건");
 	   	 System.out.println("모집기간: "+period); System.out.println("경력: "+career);System.out.println("성별: "+gender);  

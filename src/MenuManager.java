@@ -8,7 +8,6 @@ public class MenuManager {
 	 public static void main(String[] args) {
 		 String num = "0";
 		 Scanner input = new Scanner(System.in);
-
 		 ArrayList<Notice> Notices = new ArrayList<Notice>();
 
 		 NoticeManager noticemanager = new NoticeManager(input);
