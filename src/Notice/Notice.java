@@ -180,7 +180,9 @@ public class Notice {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	
 
+	
 	protected Noticekind kind = Noticekind.commercial;
 	protected String NoticeNumber; protected String NoticeTitle; protected String CompanyName;
 	protected String location;protected String period;protected String career;
@@ -200,13 +202,15 @@ public class Notice {
 		this.way = way;this.submission = submission;this.comment = comment;
 	}
 	
+	
 	public Notice() {
 		
 	}
 	
-	Notice(Noticekind kind){
+	public Notice(Noticekind kind){
 		this.kind = kind;
 	}
+
 	
 	public void printNotice(){
 		String nkind = null;

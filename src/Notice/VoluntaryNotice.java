@@ -14,6 +14,20 @@ public class VoluntaryNotice extends Notice {
 		this.place = place;
 	}
 	
+	public VoluntaryNotice(Noticekind kind, String NoticeNumber, String NoticeTitle, String place, String location, String period,
+			String career, String gender, String age, String academic, String period2, String day,
+			String time, String personnel, String condition1, String condition2, String way,
+			String submission, String comment) {
+		this.kind = kind; this.NoticeNumber = NoticeNumber; this.NoticeTitle = NoticeTitle; this.place = place;this.location = location; this.period = period;
+		this.career = career;this.gender = gender;this.age = age;this.academic = academic;this.period2 = period2;this.day = day;
+		this.time = time;this.personnel = personnel;this.condition1 = condition1;this.condition2 = condition2;
+		this.way = way;this.submission = submission;this.comment = comment;
+	}
+	
+	public VoluntaryNotice() {
+		
+	}
+	
 	public void getUserInput(Scanner input) {
 		System.out.println("공고 넘버: (순서대로 입력하세요.)"); String NoticeNumber = input.nextLine(); this.setNoticeNumber(NoticeNumber); 
 	     System.out.println("공고제목: "); String NoticeTitle = input.nextLine(); this.setNoticeTitle(NoticeTitle);

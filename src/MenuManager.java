@@ -36,7 +36,7 @@ public class MenuManager {
 		         case "5":
 	        	        break;
 	        	 default:
-	        		    System.out.println("Warning!: Select one number between 1 - 6\n");
+	        		    System.out.println("Warning!: Select one number between 1 - 5\n");
 	        		    break;
 		     }
 		 } 
