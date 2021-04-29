@@ -5,11 +5,20 @@ import java.util.Scanner;
 public class VoluntaryNotice extends Notice {
 	protected Noticekind kind = Noticekind.voluntary;
 	
+	protected String place;
+	
+	public String getPlace() {
+		return place;
+	}
+	public void setPlace(String place) {
+		this.place = place;
+	}
+	
 	public void getUserInput(Scanner input) {
 		System.out.println("공고 넘버: (순서대로 입력하세요.)"); String NoticeNumber = input.nextLine(); this.setNoticeNumber(NoticeNumber); 
 	     System.out.println("공고제목: "); String NoticeTitle = input.nextLine(); this.setNoticeTitle(NoticeTitle);
 	   	 System.out.println("활동지 정보");  
-	   	 System.out.println("봉사활동처: "); String CompanyName = input.nextLine(); this.setCompanyName(CompanyName);
+	   	 System.out.println("봉사활동처: "); String place = input.nextLine(); this.setPlace(place);
 	   	 System.out.println("활동처 위치: "); String location = input.nextLine(); this.setLocation(location);
 	   	 System.out.println("모집조건");
 	   	 System.out.println("모집기간: "); String period = input.nextLine(); this.setPeriod(period);
@@ -44,7 +53,7 @@ public class VoluntaryNotice extends Notice {
 		}
 		System.out.println("목적: "+ nkind);
 		System.out.println("공고 넘버: "+NoticeNumber); System.out.println("공고제목: "+NoticeTitle); 
-	   	 System.out.println("활동지 정보");System.out.println("봉사활동처: "+CompanyName);System.out.println("활동처 위치:" +location); 
+	   	 System.out.println("활동지 정보");System.out.println("봉사활동처: "+place);System.out.println("활동처 위치:" +location); 
 	   	 System.out.println("모집조건");
 	   	 System.out.println("모집기간: "+period); System.out.println("경력: "+career);System.out.println("성별: "+gender);  
 	   	 System.out.println("나이: "+age); System.out.println("학력: "+academic); 
