@@ -5,20 +5,12 @@ import java.util.Scanner;
 public class VoluntaryNotice extends Notice implements NoticeInput {
 	protected Noticekind kind = Noticekind.voluntary;
 	
-	protected String place;
-	
-	public String getPlace() {
-		return place;
-	}
-	public void setPlace(String place) {
-		this.place = place;
-	}
 	
 	public VoluntaryNotice(Noticekind kind, String NoticeNumber, String NoticeTitle, String place, String location, String period,
 			String career, String gender, String age, String academic, String period2, String day,
 			String time, String personnel, String condition1, String condition2, String way,
 			String submission, String comment) {
-		this.kind = kind; this.NoticeNumber = NoticeNumber; this.NoticeTitle = NoticeTitle; this.place = place;this.location = location; this.period = period;
+		this.kind = kind; this.NoticeNumber = NoticeNumber; this.NoticeTitle = NoticeTitle; this.CompanyName = place;this.location = location; this.period = period;
 		this.career = career;this.gender = gender;this.age = age;this.academic = academic;this.period2 = period2;this.day = day;
 		this.time = time;this.personnel = personnel;this.condition1 = condition1;this.condition2 = condition2;
 		this.way = way;this.submission = submission;this.comment = comment;
@@ -32,7 +24,7 @@ public class VoluntaryNotice extends Notice implements NoticeInput {
 		System.out.println("공고 넘버: (순서대로 입력하세요.)"); String NoticeNumber = input.nextLine(); this.setNoticeNumber(NoticeNumber); 
 	     System.out.println("공고제목: "); String NoticeTitle = input.nextLine(); this.setNoticeTitle(NoticeTitle);
 	   	 System.out.println("활동지 정보");  
-	   	 System.out.println("봉사활동처: "); String place = input.nextLine(); this.setPlace(place);
+	   	 System.out.println("봉사활동처: "); String place = input.nextLine(); this.setCompanyName(place);
 	   	 System.out.println("활동처 위치: "); String location = input.nextLine(); this.setLocation(location);
 	   	 System.out.println("모집조건");
 	   	 System.out.println("모집기간: "); String period = input.nextLine(); this.setPeriod(period);
@@ -66,7 +58,7 @@ public class VoluntaryNotice extends Notice implements NoticeInput {
 		}
 		System.out.println("목적: "+ nkind);
 		System.out.println("공고 넘버: "+NoticeNumber); System.out.println("공고제목: "+NoticeTitle); 
-	   	 System.out.println("활동지 정보");System.out.println("봉사활동처: "+place);System.out.println("활동처 위치:" +location); 
+	   	 System.out.println("활동지 정보");System.out.println("봉사활동처: "+CompanyName);System.out.println("활동처 위치:" +location); 
 	   	 System.out.println("모집조건");
 	   	 System.out.println("모집기간: "+period); System.out.println("경력: "+career);System.out.println("성별: "+gender);  
 	   	 System.out.println("나이: "+age); System.out.println("학력: "+academic); 

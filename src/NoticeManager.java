@@ -77,8 +77,7 @@ public class NoticeManager {
 					   System.out.println("편집을 위해 y를 눌러주세요."); 
 					    String YesorNo = input.nextLine();
 						System.out.println("편집할 항목의 번호를 입력하세요. 번호를 잘 확인하세요"); 
-						if(editNotice.getKind() == Noticekind.voluntary) {
-							VoluntaryNotice vnotice = (VoluntaryNotice) editNotice;
+						if(editNotice.getKind() == Noticekind.voluntary) {	
 							 do {
 							    	System.out.println("1: 공고제목 2: 봉사활동처, 3: 활동처 위치, 4: 모집기간, 5: 경력, 6: 성별, 7: 나이 , 8: 학력, 9: 활동기간, 10: 활동요일" );
 								    System.out.println("11: 활동시간, 12: 모집인원 13: 우대조건, 14: 기타조건, 15: 지원방법, 16: 제출서류, 17: 코멘트" );
@@ -86,15 +85,15 @@ public class NoticeManager {
 								    System.out.println("편집할 내용을 입력하세요."); 
 								    String Edit = input.nextLine();
 								     switch(Editnumber){   
-								     case "1": vnotice.setNoticeTitle(Edit); break; case "2": vnotice.setPlace(Edit); break;
-								     case "3": vnotice.setLocation(Edit); break; case "4": vnotice.setPeriod(Edit); break;
-								     case "5": vnotice.setCareer(Edit); break; case "6": vnotice.setGender(Edit); break;
-								     case "7": vnotice.setAge(Edit); break; case "8": vnotice.setAcademic(Edit); break;
-								     case "9": vnotice.setPeriod2(Edit); break; case "10": vnotice.setDay(Edit); break;
-								     case "11":  vnotice.setTime(Edit); break; case "12":  vnotice.setPersonnel(Edit); break;
-								     case "13": vnotice.setCondition1(Edit); break; case "14": vnotice.setCondition2(Edit);
-								     case "15":  vnotice.setWay(Edit); break; case "16": vnotice.setSubmission(Edit);break;
-								     case "17": vnotice.setComment(Edit); break; 
+								     case "1": editNotice.setNoticeTitle(Edit); break; case "2": editNotice.setCompanyName(Edit); break;
+								     case "3": editNotice.setLocation(Edit); break; case "4": editNotice.setPeriod(Edit); break;
+								     case "5": editNotice.setCareer(Edit); break; case "6": editNotice.setGender(Edit); break;
+								     case "7": editNotice.setAge(Edit); break; case "8": editNotice.setAcademic(Edit); break;
+								     case "9": editNotice.setPeriod2(Edit); break; case "10": editNotice.setDay(Edit); break;
+								     case "11":  editNotice.setTime(Edit); break; case "12":  editNotice.setPersonnel(Edit); break;
+								     case "13": editNotice.setCondition1(Edit); break; case "14": editNotice.setCondition2(Edit);
+								     case "15":  editNotice.setWay(Edit); break; case "16": editNotice.setSubmission(Edit);break;
+								     case "17": editNotice.setComment(Edit); break; 
 								     }
 								     System.out.println("편집을 계속하시겠습니까?(y/n)"); 
 								     YesorNo = input.nextLine();
@@ -102,8 +101,7 @@ public class NoticeManager {
 									System.out.println("편집 되었습니다.");
 									s++;
 						}
-						else {
-							CommercialNotice cnotice = (CommercialNotice) editNotice;
+						else if(editNotice.getKind() == Noticekind.commercial)  {
 				    do {
 				    	System.out.println("1: 공고제목 2: 회사명, 3: 근무지 위치, 4: 모집기간, 5: 경력, 6: 성별, 7: 나이 , 8: 학력, 9: 급여, 10: 근무기간" );
 					    System.out.println("11: 근무요일, 12: 근무시간 13: 모집직종, 14: 모집인원, 15: 고용형태, 16: 우대조건, 17: 기타조건, 18: 지원방법 , 19: 제출서류, 20: 코멘트" );
@@ -111,16 +109,16 @@ public class NoticeManager {
 					    System.out.println("편집할 내용을 입력하세요."); 
 					    String Edit = input.nextLine();
 					     switch(Editnumber){   
-					     case "1": cnotice.setNoticeTitle(Edit); break; case "2": cnotice.setCompanyName(Edit); break;
-					     case "3": cnotice.setLocation(Edit); break; case "4": cnotice.setPeriod(Edit); break;
-					     case "5": cnotice.setCareer(Edit); break; case "6": cnotice.setGender(Edit); break;
-					     case "7": cnotice.setAge(Edit); break; case "8": cnotice.setAcademic(Edit); break;
-					     case "9": cnotice.setSalary(Edit); break; case "10": cnotice.setPeriod2(Edit); break;
-					     case "11": cnotice.setDay(Edit); break; case "12": cnotice.setTime(Edit); break;
-					     case "13": cnotice.setType1(Edit); break; case "14": cnotice.setPersonnel(Edit); break;
-					     case "15":cnotice.setType2(Edit); break; case "16": cnotice.setCondition1(Edit); break;
-					     case "17": cnotice.setCondition2(Edit); break; case "18": editNotice.setWay(Edit); break;
-					     case "19": cnotice.setSubmission(Edit); break; case "20": editNotice.setComment(Edit); break;	
+					     case "1": editNotice.setNoticeTitle(Edit); break; case "2": editNotice.setCompanyName(Edit); break;
+					     case "3": editNotice.setLocation(Edit); break; case "4": editNotice.setPeriod(Edit); break;
+					     case "5": editNotice.setCareer(Edit); break; case "6": editNotice.setGender(Edit); break;
+					     case "7": editNotice.setAge(Edit); break; case "8": editNotice.setAcademic(Edit); break;
+					     case "9": editNotice.setSalary(Edit); break; case "10": editNotice.setPeriod2(Edit); break;
+					     case "11": editNotice.setDay(Edit); break; case "12": editNotice.setTime(Edit); break;
+					     case "13": editNotice.setType1(Edit); break; case "14": editNotice.setPersonnel(Edit); break;
+					     case "15":editNotice.setType2(Edit); break; case "16": editNotice.setCondition1(Edit); break;
+					     case "17": editNotice.setCondition2(Edit); break; case "18": editNotice.setWay(Edit); break;
+					     case "19": editNotice.setSubmission(Edit); break; case "20": editNotice.setComment(Edit); break;	
 					     }
 					     System.out.println("편집을 계속하시겠습니까?(y/n)"); 
 					     YesorNo = input.nextLine();
