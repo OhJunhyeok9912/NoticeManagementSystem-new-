@@ -2,13 +2,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Notice.Notice; //
+import Notice.NoticeInput;
 
 public class MenuManager {
  
 	 public static void main(String[] args) {
 		 String num = "0";
 		 Scanner input = new Scanner(System.in);
-		 ArrayList<Notice> Notices = new ArrayList<Notice>();
+		 ArrayList<NoticeInput> Notices = new ArrayList<NoticeInput>();
 
 		 NoticeManager noticemanager = new NoticeManager(input);
 		 while(!num.equals("5")) {

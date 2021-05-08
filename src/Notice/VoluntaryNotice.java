@@ -2,7 +2,7 @@ package Notice;
 
 import java.util.Scanner;
 
-public class VoluntaryNotice extends Notice {
+public class VoluntaryNotice extends Notice implements NoticeInput {
 	protected Noticekind kind = Noticekind.voluntary;
 	
 	protected String place;
@@ -24,8 +24,8 @@ public class VoluntaryNotice extends Notice {
 		this.way = way;this.submission = submission;this.comment = comment;
 	}
 	
-	public VoluntaryNotice() {
-		
+	public VoluntaryNotice(Noticekind kind) {
+		super(kind);
 	}
 	
 	public void getUserInput(Scanner input) {
@@ -52,7 +52,6 @@ public class VoluntaryNotice extends Notice {
 	   	 System.out.println("지원방법: "); String way= input.nextLine(); this.setWay(way);
 	   	 System.out.println("제출서류: "); String submission= input.nextLine();  this.setSubmission(submission);
 	   	 System.out.println("코멘트: ");  String comment= input.nextLine(); this.setComment(comment);
-	   	 String salary = "봉사활동"; this.setSalary(salary);
 	}
 	public void printNotice(){
 		String nkind = null;

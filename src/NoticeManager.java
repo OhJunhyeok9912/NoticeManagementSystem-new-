@@ -3,7 +3,9 @@ import java.util.Scanner;
 
 import Notice.CommercialNotice;
 import Notice.Notice;
+import Notice.NoticeInput;
 import Notice.VoluntaryNotice;
+import Notice.Noticekind;
 
 
 public class NoticeManager {
@@ -14,22 +16,22 @@ public class NoticeManager {
 	}
 	
 	Notice notice;
-	public ArrayList<Notice> AddNotice() {
-		 ArrayList<Notice> addNotice = new ArrayList<Notice>(); // Notice타입의 arrayList에 새로 추가한 공고를 넣는다. 
+	public ArrayList<NoticeInput> AddNotice() {
+		 ArrayList<NoticeInput> addNotice = new ArrayList<NoticeInput>(); // Notice타입의 arrayList에 새로 추가한 공고를 넣는다. 
 		 String Kind = "0";
-		 Notice notice;
+		 NoticeInput NoticeInput;
 		 while (!Kind.equals("1") && !Kind.equals("2")) {
 		 System.out.println("구인 공고의 목적을 선택하세요  1: 봉사자 모집, 2: 기업, 가게의 구인 ");
 		 Kind = input.nextLine();
 		 if(Kind.equals("1")) {
-			 notice = new VoluntaryNotice();
-			 notice.getUserInput(input);
-			 addNotice.add(notice);	
+			 NoticeInput = new VoluntaryNotice(Noticekind.voluntary);
+			 NoticeInput.getUserInput(input);
+			 addNotice.add(NoticeInput);	
 		 }
 		 else if(Kind.equals("2")) {
-			 notice = new CommercialNotice();
-			 notice.getUserInput(input);
-			 addNotice.add(notice);	
+			 NoticeInput = new CommercialNotice(Noticekind.commercial);
+			 NoticeInput.getUserInput(input);
+			 addNotice.add(NoticeInput);	
 		 }
 		 else {
 			 System.out.println("1, 2중에서 하나를 선택해 주세요.");
@@ -38,8 +40,8 @@ public class NoticeManager {
 		 return addNotice; // 공고 작성이 끝나면 공고를 반환한다. 
 		 }	 
 	
-		 public void DeleteNotice(ArrayList<Notice> Notice) { // 
-			Notice deleteNotice;
+		 public void DeleteNotice(ArrayList<NoticeInput> Notice) { // 
+			NoticeInput deleteNotice;
 			int s =0;
 			System.out.println("삭제하기 위한 공고 넘버를 입력하세요: "); 
 			String Num = input.nextLine();
@@ -60,8 +62,8 @@ public class NoticeManager {
 			}
 		 } 	 
 		 
-		 public void EditNotice(ArrayList<Notice> Notice) {
-			Notice editNotice;
+		 public void EditNotice(ArrayList<NoticeInput> Notice) {
+			NoticeInput editNotice;
 			int s =0;
 			System.out.println("편집하기 위한 공고 넘버를 입력하세요: "); 
 			String Num = input.nextLine();
@@ -75,7 +77,7 @@ public class NoticeManager {
 					   System.out.println("편집을 위해 y를 눌러주세요."); 
 					    String YesorNo = input.nextLine();
 						System.out.println("편집할 항목의 번호를 입력하세요. 번호를 잘 확인하세요"); 
-						if(editNotice.getSalary().equals("봉사활동")) {
+						if(editNotice.getKind() == Noticekind.voluntary) {
 							VoluntaryNotice vnotice = (VoluntaryNotice) editNotice;
 							 do {
 							    	System.out.println("1: 공고제목 2: 봉사활동처, 3: 활동처 위치, 4: 모집기간, 5: 경력, 6: 성별, 7: 나이 , 8: 학력, 9: 활동기간, 10: 활동요일" );
@@ -117,8 +119,8 @@ public class NoticeManager {
 					     case "11": cnotice.setDay(Edit); break; case "12": cnotice.setTime(Edit); break;
 					     case "13": cnotice.setType1(Edit); break; case "14": cnotice.setPersonnel(Edit); break;
 					     case "15":cnotice.setType2(Edit); break; case "16": cnotice.setCondition1(Edit); break;
-					     case "17": cnotice.setCondition2(Edit); break; case "18": cnotice.setWay(Edit); break;
-					     case "19": cnotice.setSubmission(Edit); break; case "20": cnotice.setComment(Edit); break;	
+					     case "17": cnotice.setCondition2(Edit); break; case "18": editNotice.setWay(Edit); break;
+					     case "19": cnotice.setSubmission(Edit); break; case "20": editNotice.setComment(Edit); break;	
 					     }
 					     System.out.println("편집을 계속하시겠습니까?(y/n)"); 
 					     YesorNo = input.nextLine();
@@ -131,8 +133,8 @@ public class NoticeManager {
 			if(Notice.size() - s == Notice.size()) {System.out.println("공고가 없습니다.");}
 			} 
 		 }
-		 public void ViewNotice(ArrayList<Notice> Notice){
-			Notice viewNotice;
+		 public void ViewNotice(ArrayList<NoticeInput> Notice){
+			NoticeInput viewNotice;
 			int s = 0;
 			System.out.println("보길 원하는 공고 넘버를 입력하세요: ");
 			String Num = input.nextLine();
