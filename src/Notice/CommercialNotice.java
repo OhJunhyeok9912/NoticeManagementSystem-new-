@@ -3,7 +3,7 @@ package Notice;
 import java.util.Scanner;
 
 public class CommercialNotice extends Notice implements NoticeInput{
-
+	protected Noticekind kind = Noticekind.commercial;
 	public CommercialNotice(Noticekind kind) {
 		super(kind);
 	}

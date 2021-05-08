@@ -45,6 +45,7 @@ public class VoluntaryNotice extends Notice implements NoticeInput {
 	   	 System.out.println("제출서류: "); String submission= input.nextLine();  this.setSubmission(submission);
 	   	 System.out.println("코멘트: ");  String comment= input.nextLine(); this.setComment(comment);
 	}
+	
 	public void printNotice(){
 		String nkind = null;
 		switch(this.kind) {

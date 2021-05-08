@@ -183,7 +183,7 @@ public abstract class Notice {
 	
 
 	
-	protected Noticekind kind = Noticekind.commercial;
+	protected Noticekind kind;
 	protected String NoticeNumber; protected String NoticeTitle; protected String CompanyName;
 	protected String location;protected String period;protected String career;
 	protected String gender;protected String age;protected String academic;
@@ -211,9 +211,7 @@ public abstract class Notice {
 		this.kind = kind;
 	}
 
-	
 	public abstract void printNotice();
-	
 	
 }
 
