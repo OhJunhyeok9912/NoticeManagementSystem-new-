@@ -258,7 +258,7 @@ public abstract class Notice implements NoticeInput {
 	public Notice(Noticekind kind){
 		this.kind = kind;
 	}
-	/*皋家靛客 抗寇贸府*/
+	/* 皋家靛客 抗寇贸府 */
 	public abstract void printNotice();
 	public String getKindString() {
 		String nkind = null;

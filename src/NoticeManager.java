@@ -78,6 +78,7 @@ public class NoticeManager {
 		 public void EditNotice(ArrayList<NoticeInput> Notice) {
 			int cnt =0;
 			int Editnumber = 0;
+			char YesorNo = 'y';
 			System.out.println("편집하기 위한 공고 넘버를 입력하세요: "); 
 			while(true) {
 			try {
@@ -87,7 +88,6 @@ public class NoticeManager {
 			for(int i=0; i<Notice.size();i++) {
 				NoticeInput = Notice.get(i);
 				if(Num == NoticeInput.getNoticeNumber()) {
-					    char YesorNo = 'y';
 						System.out.println("편집할 항목의 번호를 입력하세요. 번호를 잘 확인하세요"); 
 						if(NoticeInput.getKind() == Noticekind.voluntary) {	
 							 do {
@@ -113,7 +113,7 @@ public class NoticeManager {
 								     case 15:  NoticeInput.setWay(NoticeInput, input); break; case 16: NoticeInput.setSubmission(NoticeInput, input);break;
 								     case 17: NoticeInput.setComment(NoticeInput, input); break; default: continue;
 								     }
-								     System.out.println("편집을 계속하시겠습니까?(계속하려면 아무키를 눌러주세요. 편집은 그만하려면 n을 눌러주세요.)"); 
+								     System.out.println("편집을 계속하시겠습니까?(계속하려면 아무 문자를 입력해 주세요. 편집은 그만하려면 n을 눌러주세요.)"); 
 								     YesorNo = input.next().charAt(0);
 								    }  while (YesorNo != 'n' );
 									System.out.println("편집 되었습니다.");
@@ -145,7 +145,7 @@ public class NoticeManager {
 					     case 19: NoticeInput.setSubmission(NoticeInput, input); break; case 20: NoticeInput.setComment(NoticeInput, input); break;	
 					     default: continue;
 					     }
-					     System.out.println("편집을 계속하시겠습니까?(계속하려면 아무키를 눌러주세요. 편집은 그만하려면 n을 눌러주세요.)"); 
+					     System.out.println("편집을 계속하시겠습니까?(계속하려면 아무 문자를 입력해 주세요. 편집은 그만하려면 n을 눌러주세요.)"); 
 					     YesorNo = input.next().charAt(0);
 					    }  while (YesorNo != 'n' );
 						System.out.println("편집 되었습니다.");
