@@ -62,9 +62,9 @@ public class NoticeManager {
 					  System.out.println(Num+"번 공고가 삭제되었습니다!");
 					  cnt++;
 				}
-			}	
 			}
 			NoNotice(Notice, cnt);
+			}
 			break;
 		    }catch(InputMismatchException e) {
 		    	System.out.println("숫자를 입력하세요!" );
@@ -92,14 +92,17 @@ public class NoticeManager {
 						if(NoticeInput.getKind() == Noticekind.voluntary) {	
 							 do {
 								 showEditMenu(NoticeInput);   
+								 while(true) {
 								 try {								     
      							     Editnumber = input.nextInt();
+     							     break;
 								    }catch(InputMismatchException e) {
 								    	System.out.println("숫자를 입력하세요!" );
 								    	if(input.hasNext()) {
 											input.next();
 										}
 								    }
+								 }
 								    System.out.println("편집할 내용을 입력하세요."); 
 								    String x = input.nextLine(); 
 								     switch(Editnumber){   
@@ -122,14 +125,17 @@ public class NoticeManager {
 						else if(NoticeInput.getKind() == Noticekind.commercial)  {
 				    do {
 				    	showEditMenu(NoticeInput);   
-						 try {								     
+				    	while(true) { 
+				    	try {								     
 						     Editnumber = input.nextInt();
+						     break;
 						    }catch(InputMismatchException e) {
 						    	System.out.println("숫자를 입력하세요!" );
 						    	if(input.hasNext()) {
 									input.next();
 								}
 						    }
+				    	}
 					    System.out.println("편집할 내용을 입력하세요."); 
 					    String x = input.nextLine(); 
 					     switch(Editnumber){   
@@ -153,9 +159,8 @@ public class NoticeManager {
 					}
 				}
 				}
-
+			NoNotice(Notice, cnt);
 			} 
-			 NoNotice(Notice, cnt);
 			 break;
 			}catch(InputMismatchException e) {
 				System.out.println("숫자를 입력하세요!" );
