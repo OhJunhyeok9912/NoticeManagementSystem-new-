@@ -15,16 +15,17 @@ public class NoticeManager implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 5111972554540417328L;
-	transient Scanner input;
+
 	
-	NoticeManager(Scanner input){
-		this.input = input;
+	NoticeManager(){ //input 매개변수로 할 뿐 아무것도 실행하지 않도록한다. 
+		
 	}
 	
 	Notice notice;
 	NoticeInput NoticeInput;
 	ArrayList<NoticeInput> Notices = new ArrayList<NoticeInput>();
 	public void AddNotice() {
+		 Scanner input = new Scanner(System.in); //전역변수 였던 input을 지역변수로 바꾸어 새로 실행할 때도 종료하기전의 내용을 그대로 가져올 수 있다.  
 		 int Kind = 0;
 		 System.out.println("구인 공고의 목적을 선택하세요  1: 봉사자 모집, 2: 기업, 가게의 구인 ");
 		 while (Kind !=1 && Kind !=2) {
@@ -34,11 +35,13 @@ public class NoticeManager implements Serializable{
 			 NoticeInput = new VoluntaryNotice(Noticekind.voluntary);
 			 NoticeInput.getUserInput(input);
 			 Notices.add(NoticeInput);	
+			 MenuManager.logger.log("voluntary 공고 추가");
 		 }
 		 else if(Kind == 2) {
 			 NoticeInput = new CommercialNotice(Noticekind.commercial);
 			 NoticeInput.getUserInput(input);
 			 Notices.add(NoticeInput);	
+			 MenuManager.logger.log("voluntary 공고 추가");
 		 }
 		 else System.out.println("1, 2중에서 하나를 선택해 주세요.");  
 		 }catch(InputMismatchException e) {
@@ -51,7 +54,8 @@ public class NoticeManager implements Serializable{
 		 } 
 		}	 
 	
-		 public void DeleteNotice() { // 
+		 public void DeleteNotice() { 
+			 Scanner input = new Scanner(System.in);// 
 			int cnt =0;
 			System.out.println("삭제하기 위한 공고 넘버를 입력하세요: "); 
 			while(true) {
@@ -80,6 +84,7 @@ public class NoticeManager implements Serializable{
 		 } 	 
 		 
 		 public void EditNotice() {
+			 Scanner input = new Scanner(System.in);
 			int cnt =0;
 			int Editnumber = 0;
 			char YesorNo = 'y';
@@ -175,6 +180,7 @@ public class NoticeManager implements Serializable{
 			}
 		 }
 		 public void ViewNotice(){
+			 Scanner input = new Scanner(System.in);
 			int cnt = 0;
 			System.out.println("보길 원하는 공고 넘버를 입력하세요: (-1을 입력하면 등록된 모든 공고를 볼 수 있습니다.)");
 			while(true) {
@@ -230,4 +236,6 @@ public class NoticeManager implements Serializable{
     		   System.out.println("해당 공고가 없습니다.");
     		   }
        }
+
+	
 }

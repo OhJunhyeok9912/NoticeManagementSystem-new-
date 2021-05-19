@@ -17,11 +17,10 @@ public class MenuManager {
 		 Scanner input = new Scanner(System.in);
 		 NoticeManager noticemanager = getObject("noticemanager.ser");
 		 if(noticemanager == null) {
-			 noticemanager = new NoticeManager(input);
+			 noticemanager = new NoticeManager();
 		 }
 		 selectMenu(input, noticemanager);
 		 putObject(noticemanager, "noticemanager.ser");
-
 	 }
 	 
 	 public static void selectMenu(Scanner input, NoticeManager noticemanager) {
