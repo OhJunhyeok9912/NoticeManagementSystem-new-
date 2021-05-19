@@ -1,13 +1,19 @@
 package Notice;
 
+import java.io.Serializable;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import Ex.NullException;
-import Notice.Noticekind;
-public abstract class Notice implements NoticeInput {
+
+public abstract class Notice implements NoticeInput,Serializable {
 	
-    /*getter setter*/
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -6433078641194764347L;
+
+	/*getter setter*/
 	public Noticekind getKind() {
 		return kind;
 	}
@@ -589,4 +595,3 @@ public abstract class Notice implements NoticeInput {
 		this.setComment(comment);		
 	}
 }
-

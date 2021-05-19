@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -9,8 +10,12 @@ import Notice.VoluntaryNotice;
 import Notice.Noticekind;
 
 
-public class NoticeManager {
-	Scanner input;
+public class NoticeManager implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5111972554540417328L;
+	transient Scanner input;
 	
 	NoticeManager(Scanner input){
 		this.input = input;
@@ -18,8 +23,8 @@ public class NoticeManager {
 	
 	Notice notice;
 	NoticeInput NoticeInput;
-	public ArrayList<NoticeInput> AddNotice() {
-		 ArrayList<NoticeInput> addNotice = new ArrayList<NoticeInput>(); // Notice타입의 arrayList에 새로 추가한 공고를 넣는다. 
+	ArrayList<NoticeInput> Notices = new ArrayList<NoticeInput>();
+	public void AddNotice() {
 		 int Kind = 0;
 		 System.out.println("구인 공고의 목적을 선택하세요  1: 봉사자 모집, 2: 기업, 가게의 구인 ");
 		 while (Kind !=1 && Kind !=2) {
@@ -28,12 +33,12 @@ public class NoticeManager {
 		 if(Kind == 1) {
 			 NoticeInput = new VoluntaryNotice(Noticekind.voluntary);
 			 NoticeInput.getUserInput(input);
-			 addNotice.add(NoticeInput);	
+			 Notices.add(NoticeInput);	
 		 }
 		 else if(Kind == 2) {
 			 NoticeInput = new CommercialNotice(Noticekind.commercial);
 			 NoticeInput.getUserInput(input);
-			 addNotice.add(NoticeInput);	
+			 Notices.add(NoticeInput);	
 		 }
 		 else System.out.println("1, 2중에서 하나를 선택해 주세요.");  
 		 }catch(InputMismatchException e) {
@@ -43,27 +48,26 @@ public class NoticeManager {
 				}
 				Kind = 0;
 		 }
-		 }
-		 return addNotice; // 공고 작성이 끝나면 공고를 반환한다. 
+		 } 
 		}	 
 	
-		 public void DeleteNotice(ArrayList<NoticeInput> Notice) { // 
+		 public void DeleteNotice() { // 
 			int cnt =0;
 			System.out.println("삭제하기 위한 공고 넘버를 입력하세요: "); 
 			while(true) {
 		    try {
 			int Num = input.nextInt();
-			NoNotice(Notice, 1);
-			if(Notice.size()>0) {
-			for(int i=0; i<Notice.size();i++) {
-				NoticeInput = Notice.get(i);
+			NoNotice(Notices, 1);
+			if(Notices.size()>0) {
+			for(int i=0; i<Notices.size();i++) {
+				NoticeInput = Notices.get(i);
 				if(Num == NoticeInput.getNoticeNumber()) {
-					  Notice.remove(i);
+					  Notices.remove(i);
 					  System.out.println(Num+"번 공고가 삭제되었습니다!");
 					  cnt++;
 				}
 			}
-			NoNotice(Notice, cnt);
+			NoNotice(Notices, cnt);
 			}
 			break;
 		    }catch(InputMismatchException e) {
@@ -75,7 +79,7 @@ public class NoticeManager {
 		  }
 		 } 	 
 		 
-		 public void EditNotice(ArrayList<NoticeInput> Notice) {
+		 public void EditNotice() {
 			int cnt =0;
 			int Editnumber = 0;
 			char YesorNo = 'y';
@@ -83,10 +87,10 @@ public class NoticeManager {
 			while(true) {
 			try {
 			int Num = input.nextInt();
-			NoNotice(Notice, 1);
-			if(Notice.size()>0) {
-			for(int i=0; i<Notice.size();i++) {
-				NoticeInput = Notice.get(i);
+			NoNotice(Notices, 1);
+			if(Notices.size()>0) {
+			for(int i=0; i<Notices.size();i++) {
+				NoticeInput = Notices.get(i);
 				if(Num == NoticeInput.getNoticeNumber()) {
 						System.out.println("편집할 항목의 번호를 입력하세요. 번호를 잘 확인하세요"); 
 						if(NoticeInput.getKind() == Noticekind.voluntary) {	
@@ -159,7 +163,7 @@ public class NoticeManager {
 					}
 				}
 				}
-			NoNotice(Notice, cnt);
+			NoNotice(Notices, cnt);
 			} 
 			 break;
 			}catch(InputMismatchException e) {
@@ -170,28 +174,28 @@ public class NoticeManager {
 			}
 			}
 		 }
-		 public void ViewNotice(ArrayList<NoticeInput> Notice){
+		 public void ViewNotice(){
 			int cnt = 0;
 			System.out.println("보길 원하는 공고 넘버를 입력하세요: (-1을 입력하면 등록된 모든 공고를 볼 수 있습니다.)");
 			while(true) {
 			try {
 			    int Num = input.nextInt();
-			    NoNotice(Notice, 1);
-			    if(Notice.size()>0) {
+			    NoNotice(Notices, 1);
+			    if(Notices.size()>0) {
 			        if(Num != -1) {	
-			            for(int i=0; i<Notice.size();i++) {
-				        NoticeInput = Notice.get(i);
+			            for(int i=0; i<Notices.size();i++) {
+				        NoticeInput = Notices.get(i);
 				            if(Num == NoticeInput.getNoticeNumber()) {
 					           NoticeInput.printNotice();
 					           cnt++;
 				             }				
 			            }
-			        NoNotice(Notice, cnt);
+			        NoNotice(Notices, cnt);
 			           }
 			    else {
-				    System.out.println("현재 등록된 공고의 수: "+ Notice.size());
-				    for(int i=0; i<Notice.size();i++) {
-				        NoticeInput = Notice.get(i);
+				    System.out.println("현재 등록된 공고의 수: "+ Notices.size());
+				    for(int i=0; i<Notices.size();i++) {
+				        NoticeInput = Notices.get(i);
 					    NoticeInput.printNotice();
 			           }
 				    }		
