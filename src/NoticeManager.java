@@ -17,7 +17,7 @@ public class NoticeManager implements Serializable{
 	private static final long serialVersionUID = 5111972554540417328L;
 
 	
-	NoticeManager(){ //input 매개변수로 할 뿐 아무것도 실행하지 않도록한다. 
+	NoticeManager(){ //input 매개변수를 삭제
 		
 	}
 	
@@ -25,7 +25,7 @@ public class NoticeManager implements Serializable{
 	NoticeInput NoticeInput;
 	ArrayList<NoticeInput> Notices = new ArrayList<NoticeInput>();
 	public void AddNotice() {
-		 Scanner input = new Scanner(System.in); //전역변수 였던 input을 지역변수로 바꾸어 새로 실행할 때도 종료하기전의 내용을 그대로 가져올 수 있다.  
+		 Scanner input = new Scanner(System.in); //전역변수였던 input을 지역변수로 바꾸어 새로 실행할 때도 종료하기전의 내용을 그대로 가져올 수 있다.  
 		 int Kind = 0;
 		 System.out.println("구인 공고의 목적을 선택하세요  1: 봉사자 모집, 2: 기업, 가게의 구인 ");
 		 while (Kind !=1 && Kind !=2) {
@@ -41,11 +41,15 @@ public class NoticeManager implements Serializable{
 			 NoticeInput = new CommercialNotice(Noticekind.commercial);
 			 NoticeInput.getUserInput(input);
 			 Notices.add(NoticeInput);	
-			 MenuManager.logger.log("voluntary 공고 추가");
+			 MenuManager.logger.log("commercial 공고 추가");
 		 }
-		 else System.out.println("1, 2중에서 하나를 선택해 주세요.");  
+		 else {
+			 System.out.println("1, 2중에서 하나를 선택해 주세요."); 
+			 MenuManager.logger.log("잘못된 숫자 입력");
+		 }
 		 }catch(InputMismatchException e) {
 			 System.out.println("1, 2중에서 하나를 선택해 주세요." );
+			 MenuManager.logger.log("문자를 입력");
 				if(input.hasNext()) {
 					input.next();
 				}
@@ -68,6 +72,7 @@ public class NoticeManager implements Serializable{
 				if(Num == NoticeInput.getNoticeNumber()) {
 					  Notices.remove(i);
 					  System.out.println(Num+"번 공고가 삭제되었습니다!");
+					  MenuManager.logger.log(Num+"번 공고를 삭제");
 					  cnt++;
 				}
 			}
@@ -76,6 +81,7 @@ public class NoticeManager implements Serializable{
 			break;
 		    }catch(InputMismatchException e) {
 		    	System.out.println("숫자를 입력하세요!" );
+		    	MenuManager.logger.log("문자를 입력");
 				if(input.hasNext()) {
 					input.next();
 				}
@@ -107,6 +113,7 @@ public class NoticeManager implements Serializable{
      							     break;
 								    }catch(InputMismatchException e) {
 								    	System.out.println("숫자를 입력하세요!" );
+								    	MenuManager.logger.log("문자를 입력");
 								    	if(input.hasNext()) {
 											input.next();
 										}
@@ -123,12 +130,13 @@ public class NoticeManager implements Serializable{
 								     case 11:  NoticeInput.setTime(NoticeInput, input); break; case 12:  NoticeInput.setPersonnel(NoticeInput, input); break;
 								     case 13: NoticeInput.setCondition1(NoticeInput, input); break; case 14: NoticeInput.setCondition2(NoticeInput, input);
 								     case 15:  NoticeInput.setWay(NoticeInput, input); break; case 16: NoticeInput.setSubmission(NoticeInput, input);break;
-								     case 17: NoticeInput.setComment(NoticeInput, input); break; default: continue;
+								     case 17: NoticeInput.setComment(NoticeInput, input); break; default: System.out.println("번호를 다시 입력하세요!"); continue;
 								     }
 								     System.out.println("편집을 계속하시겠습니까?(계속하려면 아무 문자를 입력해 주세요. 편집은 그만하려면 n을 눌러주세요.)"); 
 								     YesorNo = input.next().charAt(0);
 								    }  while (YesorNo != 'n' );
 									System.out.println("편집 되었습니다.");
+									MenuManager.logger.log(Num+"번 공고를 편집");
 									cnt++;
 						}
 						else if(NoticeInput.getKind() == Noticekind.commercial)  {
@@ -140,6 +148,7 @@ public class NoticeManager implements Serializable{
 						     break;
 						    }catch(InputMismatchException e) {
 						    	System.out.println("숫자를 입력하세요!" );
+						    	MenuManager.logger.log("문자를 입력");
 						    	if(input.hasNext()) {
 									input.next();
 								}
@@ -158,12 +167,13 @@ public class NoticeManager implements Serializable{
 					     case 15:NoticeInput.setType2(NoticeInput, input); break; case 16: NoticeInput.setCondition1(NoticeInput, input); break;
 					     case 17: NoticeInput.setCondition2(NoticeInput, input); break; case 18: NoticeInput.setWay(NoticeInput, input); break;
 					     case 19: NoticeInput.setSubmission(NoticeInput, input); break; case 20: NoticeInput.setComment(NoticeInput, input); break;	
-					     default: continue;
+					     default: System.out.println("번호를 다시 입력하세요!"); continue;
 					     }
 					     System.out.println("편집을 계속하시겠습니까?(계속하려면 아무 문자를 입력해 주세요. 편집은 그만하려면 n을 눌러주세요.)"); 
 					     YesorNo = input.next().charAt(0);
 					    }  while (YesorNo != 'n' );
 						System.out.println("편집 되었습니다.");
+						MenuManager.logger.log(Num+"번 공고를 편집");
 						cnt++;
 					}
 				}
@@ -173,6 +183,7 @@ public class NoticeManager implements Serializable{
 			 break;
 			}catch(InputMismatchException e) {
 				System.out.println("숫자를 입력하세요!" );
+				MenuManager.logger.log("문자를 입력");
 				if(input.hasNext()) {
 					input.next();
 				}
@@ -180,7 +191,7 @@ public class NoticeManager implements Serializable{
 			}
 		 }
 		 public void ViewNotice(){
-			 Scanner input = new Scanner(System.in);
+			Scanner input = new Scanner(System.in);
 			int cnt = 0;
 			System.out.println("보길 원하는 공고 넘버를 입력하세요: (-1을 입력하면 등록된 모든 공고를 볼 수 있습니다.)");
 			while(true) {
@@ -194,6 +205,7 @@ public class NoticeManager implements Serializable{
 				            if(Num == NoticeInput.getNoticeNumber()) {
 					           NoticeInput.printNotice();
 					           cnt++;
+					           MenuManager.logger.log(Num+"번 공고를 출력");
 				             }				
 			            }
 			        NoNotice(Notices, cnt);
@@ -204,16 +216,19 @@ public class NoticeManager implements Serializable{
 				        NoticeInput = Notices.get(i);
 					    NoticeInput.printNotice();
 			           }
+				    MenuManager.logger.log("전 공고를 출력");
 				    }		
 	             }
 			     break;
 			}catch(InputMismatchException e ) {
 				System.out.println("숫자를 입력하세요!" );
+				MenuManager.logger.log("문자를 입력");
 				if(input.hasNext()) {
 					input.next();
 				}
 			}
 		   }
+			
 		 }
 		 
        public void showEditMenu(NoticeInput NoticeInput) {
@@ -231,9 +246,11 @@ public class NoticeManager implements Serializable{
        public void NoNotice(ArrayList<NoticeInput> Notice, int cnt) {
     	   if(Notice.size() == 0) {
 				System.out.println("현재 작성되어 있는 공고가 없습니다.");
+				MenuManager.logger.log("작성된 공고가 없음");
 			}
     	   else if(Notice.size() - cnt == Notice.size()) {
     		   System.out.println("해당 공고가 없습니다.");
+    		   MenuManager.logger.log("공고를 찾지 못함");
     		   }
        }
 
