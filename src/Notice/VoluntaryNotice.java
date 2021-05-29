@@ -46,7 +46,7 @@ public class VoluntaryNotice extends Notice {
 	   	 System.out.println("모집기간: "+period); System.out.println("경력: "+career);System.out.println("성별: "+gender);  
 	   	 System.out.println("나이: "+age); System.out.println("학력: "+academic); 
 	   	 System.out.println("활동정보");
-	   	 System.out.println("활동기간: "+period2); System.out.println("활동요일: "+day);  System.out.println("근무시간: "+time);
+	   	 System.out.println("활동기간: "+period2); System.out.println("활동요일: "+day);  System.out.println("활동시간: "+time);
 	   	 System.out.println("모집내용");
 	   	  System.out.println("모집인원: "+personnel);  System.out.println("우대조건: "+condition1); System.out.println("기타조건: "+condition2); 
 	   	 System.out.println("기타사항");

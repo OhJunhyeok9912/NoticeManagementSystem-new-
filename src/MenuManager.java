@@ -10,8 +10,7 @@ import Log.EventLogger;
 
 public class MenuManager {
      static EventLogger logger = new EventLogger("Log.txt");   
-	 public static void main(String[] args) {
-		 
+	 public static void main(String[] args) {	 
 		 Scanner input = new Scanner(System.in);
 		 NoticeManager noticemanager = getObject("noticemanager.ser");
 		 if(noticemanager == null) {
