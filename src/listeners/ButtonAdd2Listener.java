@@ -13,7 +13,7 @@ import GUI.WindowFrame;
 public class ButtonAdd2Listener implements ActionListener {
 	WindowFrame frame;
 	public ButtonAdd2Listener(WindowFrame frame) {
-		this.frame = frame;
+		this.frame = frame; //
 		
 		
 	}
