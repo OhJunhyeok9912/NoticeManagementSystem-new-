@@ -6,7 +6,29 @@ import Ex.NullException;
 
 public interface NoticeInput {
 	public void printNotice();
+	
 	public int getNoticeNumber();
+	public String getNoticeTitle();
+	public String getCompanyName();
+	public String getLocation();
+	public String getPeriod();
+	public String getCareer();
+	public String getGender();
+	public String getAge();
+	public String getAcademic();
+	public String getSalary();
+	public String getPeriod2();
+	public String getDay();
+	public String getTime();
+	public String getType1();
+	public String getPersonnel();
+	public String getType2();
+	public String getCondition1();
+	public String getCondition2();
+	public String getWay();
+	public String getSubmission();
+	public String getComment();
+	
 	public void getUserInput(Scanner input);
 	public Noticekind getKind();
 	public void setWay(String way)throws NullException;

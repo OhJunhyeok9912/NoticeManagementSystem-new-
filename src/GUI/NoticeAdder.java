@@ -4,17 +4,21 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.JTextField; 
 import javax.swing.SpringLayout;
 
-public class NoticeAdder extends JFrame {
+public class NoticeAdder extends JPanel {
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 5880751196834516087L;
 
-	public NoticeAdder() {
-    	JPanel panel = new JPanel();
+	WindowFrame frame;
+	
+	public NoticeAdder(WindowFrame frame) {
+		this.frame = frame;
+		
+		JPanel panel = new JPanel();
     	panel.setLayout(new SpringLayout());
     	
     	JButton button1 = new JButton("Save");
@@ -149,9 +153,9 @@ public class NoticeAdder extends JFrame {
     	panel.add(button2);
     	
     	SpringUtilities.makeCompactGrid(panel, 22,2,6,6,6,6);
-    	this.setSize(500, 1000);
-    	this.setContentPane(panel);
+    	this.add(panel);
         this.setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
+
 }

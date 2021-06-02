@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-public class NoticeAdder2 extends JFrame{
+public class NoticeAdder2 extends JPanel{
 
 
 	/**
@@ -15,8 +15,12 @@ public class NoticeAdder2 extends JFrame{
 	 */
 	private static final long serialVersionUID = 5812343919129157749L;
 
-	public NoticeAdder2() {
-    	JPanel panel = new JPanel();
+	WindowFrame frame;
+	
+	public NoticeAdder2(WindowFrame frame) {
+		this.frame = frame;
+		
+		JPanel panel = new JPanel();
     	panel.setLayout(new SpringLayout());
     	
     	JButton button1 = new JButton("Save");
@@ -136,9 +140,8 @@ public class NoticeAdder2 extends JFrame{
     	panel.add(button2);
     	
     	SpringUtilities.makeCompactGrid(panel, 19,2,6,6,6,6);
-    	this.setSize(500, 1000);
-    	this.setContentPane(panel);
+    	this.add(panel);
         this.setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
 }
