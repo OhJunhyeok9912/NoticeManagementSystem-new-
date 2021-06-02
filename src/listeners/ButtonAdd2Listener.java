@@ -22,7 +22,7 @@ public class ButtonAdd2Listener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		JButton b = (JButton)e.getSource();
 		NoticeAdder2 adder2 = frame.getAdd2();
-        frame.setupPanel(adder2);
+        frame.setupPanel(adder2);//
 	}
 
 }
