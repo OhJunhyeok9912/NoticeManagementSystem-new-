@@ -76,7 +76,7 @@ public class ViewNotice2 extends JPanel {
 	    
 	    JTable table = new JTable(model);
 	    JScrollPane sp = new JScrollPane(table);
-	    sp.setPreferredSize(new Dimension(2100,500)); //JTable의 가로, 세로를 조정
+	    sp.setPreferredSize(new Dimension(2100,500)); //JScrollPane의 가로, 세로를 조정
 	    this.add(sp);
 	  } 
 }

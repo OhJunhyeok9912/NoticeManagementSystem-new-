@@ -24,16 +24,16 @@ public class WindowFrame extends JFrame {
 	
 	public WindowFrame(NoticeManager noticemanager) {
     	this.noticemanager = noticemanager;
-    	this. menu = new MenuSelection(this);
+    	this.menu = new MenuSelection(this);
     	this.selectadd = new SelectAddNotice(this);
-   	    this. add =  new NoticeAdder(this);
+   	    this.add =  new NoticeAdder(this);
    	    this.add2 =  new NoticeAdder2(this);
    	    this.selectview = new SelectViewNotice(this);
    	    this.view = new ViewNotice(this, this.noticemanager);
    	    this.view2 = new ViewNotice2(this, this.noticemanager);
 
     	
-    	this.setSize(2300,1000);
+    	this.setSize(2300,800);
     	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
     	this.setupPanel(menu);
     	this.setVisible(true);
@@ -55,8 +55,6 @@ public class WindowFrame extends JFrame {
 		this.selectadd = selectadd;
 	}
  
-	
-	
 	public NoticeAdder getAdd() {
 		return add;
 	}

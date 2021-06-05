@@ -1,0 +1,14 @@
+6월 03, 2021 1:00:12 오전 Log.EventLogger log
+INFO: voluntary 공고 추가
+6월 03, 2021 1:00:13 오전 Log.EventLogger log
+INFO: 시스템 종료
+6월 03, 2021 1:00:38 오전 Log.EventLogger log
+INFO: commercial 공고 추가
+6월 03, 2021 1:00:40 오전 Log.EventLogger log
+INFO: 시스템 종료
+6월 03, 2021 1:17:54 오전 Log.EventLogger log
+INFO: voluntary 공고 추가
+6월 03, 2021 1:17:55 오전 Log.EventLogger log
+INFO: 시스템 종료
+6월 03, 2021 9:57:51 오전 Log.EventLogger log
+INFO: 전 공고를 출력
