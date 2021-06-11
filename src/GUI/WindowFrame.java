@@ -26,8 +26,8 @@ public class WindowFrame extends JFrame {
     	this.noticemanager = noticemanager;
     	this.menu = new MenuSelection(this);
     	this.selectadd = new SelectAddNotice(this);
-   	    this.add =  new NoticeAdder(this);
-   	    this.add2 =  new NoticeAdder2(this);
+   	    this.add =  new NoticeAdder(this, this.noticemanager);
+   	    this.add2 =  new NoticeAdder2(this, this.noticemanager);
    	    this.selectview = new SelectViewNotice(this);
    	    this.view = new ViewNotice(this, this.noticemanager);
    	    this.view2 = new ViewNotice2(this, this.noticemanager);

@@ -7,6 +7,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField; 
 import javax.swing.SpringLayout;
 
+import Manager.NoticeManager;
+import listeners.NoticeAdderCancelListener;
+import listeners.NoticeAdderListener;
+
 public class NoticeAdder extends JPanel {
     /**
 	 * 
@@ -14,15 +18,14 @@ public class NoticeAdder extends JPanel {
 	private static final long serialVersionUID = 5880751196834516087L;
 
 	WindowFrame frame;
-	
-	public NoticeAdder(WindowFrame frame) {
+	NoticeManager noticemanager;
+	public NoticeAdder(WindowFrame frame, NoticeManager noticemanager) {
 		this.frame = frame;
+		this.noticemanager = noticemanager;
 		
 		JPanel panel = new JPanel();
     	panel.setLayout(new SpringLayout());
     	
-    	JButton button1 = new JButton("Save");
-    	JButton button2 = new JButton("Exit");
     	JLabel labelNumber = new JLabel("공고넘버: ", JLabel.TRAILING);
     	JTextField fieldNumber = new JTextField(10);
     	labelNumber.setLabelFor(fieldNumber);
@@ -30,10 +33,10 @@ public class NoticeAdder extends JPanel {
     	panel.add(fieldNumber);
     	
     	JLabel labelTitle= new JLabel("공고제목: ", JLabel.TRAILING);
-    	JTextField fielditle = new JTextField(10);
-    	labelTitle.setLabelFor(fielditle);
+    	JTextField fieldTitle = new JTextField(10);
+    	labelTitle.setLabelFor(fieldTitle);
     	panel.add(labelTitle);
-    	panel.add(fielditle);
+    	panel.add(fieldTitle);
     	
     	JLabel labelCompanyName = new JLabel("회사명: ", JLabel.TRAILING);
     	JTextField fieldCompanyName = new JTextField(10);
@@ -148,6 +151,15 @@ public class NoticeAdder extends JPanel {
     	labelcomment.setLabelFor(fieldcomment);
     	panel.add(labelcomment);
     	panel.add(fieldcomment);
+    	JButton button1 = new JButton("Save");
+    	JButton button2 = new JButton("Cancel");
+    	
+    	button1.addActionListener(new NoticeAdderListener(fieldNumber, fieldTitle, fieldCompanyName,fieldlocation,
+        fieldperiod, fieldcareer ,fieldgender, fieldage, fieldacademic, fieldsalary ,fieldperiod2, fieldday,fieldtime,
+    	fieldtype1,fieldpersonnel,fieldtype2,fieldcondition1,fieldcondition2,fieldway,fieldsubmission,fieldcomment, noticemanager));
+    	
+    	button2.addActionListener(new NoticeAdderCancelListener(frame));
+    	 	
     	
     	panel.add(button1);
     	panel.add(button2);

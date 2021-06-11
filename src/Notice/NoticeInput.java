@@ -31,6 +31,9 @@ public interface NoticeInput {
 	
 	public void getUserInput(Scanner input);
 	public Noticekind getKind();
+	
+	
+	public void setNoticeNumber(int noticeNumber);
 	public void setWay(String way)throws NullException;
 	public void setComment(String comment);
 	public void setNoticeTitle(String noticeTitle)throws NullException;
@@ -51,6 +54,7 @@ public interface NoticeInput {
 	public void setCondition2(String condition2)throws NullException;
 	public void setSubmission(String submission)throws NullException;
 	public void setSalary(String salary)throws NullException;
+	
 	public void setNoticeNumber(NoticeInput NoticeInput, Scanner input);
 	public void setNoticeTitle(NoticeInput NoticeInput, Scanner input);	
 	public void setCompanyName(NoticeInput NoticeInput, Scanner input);	

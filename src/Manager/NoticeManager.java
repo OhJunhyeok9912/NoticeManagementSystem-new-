@@ -25,6 +25,11 @@ public class NoticeManager implements Serializable{
 	Notice notice;
 	NoticeInput NoticeInput;
 	ArrayList<NoticeInput> Notices = new ArrayList<NoticeInput>();
+	
+	public void AddNotice(NoticeInput noticeinput) {
+		Notices.add(noticeinput);
+	}
+	
 	public void AddNotice() {
 		 Scanner input = new Scanner(System.in); //전역변수였던 input을 지역변수로 바꾸어 새로 실행할 때도 종료하기전의 내용을 그대로 가져올 수 있다.  
 		 int Kind = 0;
