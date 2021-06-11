@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import listeners.ButtonAddListener;
+import listeners.ButtonExit;
 import listeners.ButtonSelectNoticeListener;
 import listeners.ButtonSelectViewListener;
 import listeners.ButtonViewListener;
@@ -32,7 +33,7 @@ public class MenuSelection extends JPanel{
         
         button1.addActionListener(new ButtonSelectNoticeListener(frame));
         button4.addActionListener(new ButtonSelectViewListener(frame));
-
+        button5.addActionListener(new ButtonExit());
         
         
         
